@@ -1,9 +1,13 @@
 package com.example.lenovo.cardlessatm;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import com.google.android.gms.common.api.CommonStatusCodes;
+import com.google.android.gms.vision.barcode.Barcode;
+
 
 public class methodWithdrawal extends AppCompatActivity implements View.OnClickListener{
 
@@ -23,7 +27,7 @@ public class methodWithdrawal extends AppCompatActivity implements View.OnClickL
     {
         if(v.getId()==R.id.buttonQR)
         {
-
+            //Intent intent=Intent(applicationContext, BarcodeCaptureActivity::class.java);
         }
     }
 }

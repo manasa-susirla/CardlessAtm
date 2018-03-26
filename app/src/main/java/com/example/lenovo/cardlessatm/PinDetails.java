@@ -22,6 +22,7 @@ public class PinDetails extends AppCompatActivity implements View.OnClickListene
         {
             Intent intent = new Intent(this, methodWithdrawal.class);
             startActivity(intent);
+            setContentView(R.layout.activity_method_withdrawal);
         }
     }
 }

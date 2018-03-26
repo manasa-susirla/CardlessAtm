@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         }
             else if(v.getId()==R.id.buttonSignup)
             Log.d("button","BUTTON2 WAS PRESSED");
-
+            Intent intent = new Intent(this, Signup.class);
+            startActivity(intent);
     }
 }

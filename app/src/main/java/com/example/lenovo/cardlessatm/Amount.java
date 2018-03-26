@@ -13,6 +13,7 @@ public class Amount extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amount);
         proceed=(Button)findViewById(R.id.buttonProceed);
+        proceed.setOnClickListener(this);
     }
     public void onClick(View v)
     {
@@ -20,6 +21,7 @@ public class Amount extends AppCompatActivity implements View.OnClickListener{
         {
             Intent intent = new Intent(this, PinDetails.class);
             startActivity(intent);
+            setContentView(R.layout.activity_pin_details);
         }
     }
 }

@@ -22,6 +22,7 @@ public class Withdraw extends AppCompatActivity implements  View.OnClickListener
             Log.d("button", "BUTTON1 WAS PRESSED");
             Intent intent = new Intent(this, Accounts.class);
             startActivity(intent);
+            setContentView(R.layout.activity_accounts);
         }
 
     }

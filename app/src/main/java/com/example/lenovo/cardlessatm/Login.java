@@ -20,7 +20,7 @@ public class Login extends AppCompatActivity implements  View.OnClickListener{
     public void onClick(View v)
     {
         if(v.getId()==R.id.buttonLogin2) {
-            Log.d("button", "BUTTON1 WAS PRESSED");
+
             Intent intent = new Intent(this, Withdraw.class);
             startActivity(intent);
             setContentView(R.layout.activity_withdraw);

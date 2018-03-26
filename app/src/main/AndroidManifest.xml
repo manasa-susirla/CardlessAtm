@@ -16,18 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login"/>
-
-        <activity android:name=".Withdraw"/>
-
-        <activity android:name=".Accounts"/>
-
-        <activity android:name=".Amount"/>
-
+        <activity android:name=".Login" />
+        <activity android:name=".Withdraw" />
+        <activity android:name=".Accounts" />
+        <activity android:name=".Amount" />
         <activity android:name=".PinDetails" />
-
-        <activity android:name=".methodWithdrawal"></activity>
-
+        <activity android:name=".methodWithdrawal" />
+        <activity android:name=".Signup"></activity>
     </application>
 
 </manifest>

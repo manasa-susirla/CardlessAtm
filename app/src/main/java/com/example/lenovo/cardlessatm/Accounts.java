@@ -23,6 +23,7 @@ Button savings,current;
         {
             Intent intent = new Intent(this, Amount.class);
             startActivity(intent);
+            setContentView(R.layout.activity_amount);
         }
     }
 }
