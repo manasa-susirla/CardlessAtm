@@ -24,12 +24,12 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
     {
         if(v.getId()==R.id.buttonLogin) {
             Log.d("button", "BUTTON1 WAS PRESSED");
-            Intent intent = new Intent(this, Login.class);
+            Intent intent = new Intent(this, Withdraw.class);
             startActivity(intent);
         }
             else if(v.getId()==R.id.buttonSignup)
             Log.d("button","BUTTON2 WAS PRESSED");
-            Intent intent = new Intent(this, Signup.class);
-            startActivity(intent);
+            //Intent intent = new Intent(this, Signup.class);
+            //startActivity(intent);
     }
 }

@@ -59,4 +59,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.197" />
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="xyz"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 </android.support.constraint.ConstraintLayout>

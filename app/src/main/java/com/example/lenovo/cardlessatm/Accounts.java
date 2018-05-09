@@ -22,6 +22,7 @@ Button savings,current;
         if(v.getId()==R.id.buttonSavings)
         {
             Intent intent = new Intent(this, Amount.class);
+            intent.putExtra("acc_type","savings");
             startActivity(intent);
             setContentView(R.layout.activity_amount);
         }
