@@ -26,6 +26,7 @@ public class Amount extends AppCompatActivity implements View.OnClickListener {
             if (v.getId() == R.id.buttonProceed) {
                 Intent intent = new Intent(this, PinDetails.class);
                 String acc_type=getIntent().getExtras().getString("acc_type");
+                String acc=getIntent().getExtras().getString("acc");
                 System.out.println("account type="+acc_type);
 
                 String amt = Amount.getText().toString();
@@ -36,6 +37,7 @@ public class Amount extends AppCompatActivity implements View.OnClickListener {
                 //Add the bundle to the intent
                 intent.putExtra("amount",amt);
                 intent.putExtra("acc_type",acc_type);
+                intent.putExtra("acc",acc);
                 //Fire that second activity
                 startActivity(intent);
                 setContentView(R.layout.activity_pin_details);

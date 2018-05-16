@@ -16,13 +16,19 @@ import com.google.firebase.database.ValueEventListener;
 
 class AccountDetails
 {
+    String IFSC;
     int acc_no;
     float balance;
-    int mobile;
+    String accesscode;
+    Long mobile;
     int pin;
     String currentTransactionID;
     String transactionIDList;
-    int accesscode;
+    String isLinked;
+
+    AccountDetails(){
+
+    }
 }
 public class PinDetails extends AppCompatActivity implements View.OnClickListener{
 
@@ -56,12 +62,12 @@ public class PinDetails extends AppCompatActivity implements View.OnClickListene
             String amt = getIntent().getExtras().getString("amount");
             String acc_type=getIntent().getExtras().getString("acc_type");
             final String pin=editTextPIN.getText().toString();
-            final int acc=444;
+            final String acc=getIntent().getExtras().getString("acc");;
 
             intent.putExtra("amount",amt);
             intent.putExtra("pin",pin);
             intent.putExtra("acc_type",acc_type);
-            intent.putExtra("acc",String.valueOf(acc));
+            intent.putExtra("acc",acc);
 
             database = FirebaseDatabase.getInstance();
             database.getReference().child("accounts")
@@ -73,7 +79,7 @@ public class PinDetails extends AppCompatActivity implements View.OnClickListene
 
                                 AccountDetails user = snapshot.getValue(AccountDetails.class);
                                 System.out.println("user acc-"+user.acc_no);
-                                if(user.acc_no==acc && user.pin==Integer.parseInt(pin))
+                                if(user.acc_no==Integer.parseInt(acc) && user.pin==Integer.parseInt(pin))
                                 {
                                     Toast.makeText(getApplicationContext(),"PIN matched", Toast.LENGTH_SHORT).show();
                                     startActivity(intent);

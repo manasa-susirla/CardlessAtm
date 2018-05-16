@@ -9,11 +9,12 @@ import android.view.View;
 import android.widget.Button;
 
 public class Accounts extends AppCompatActivity implements View.OnClickListener{
-Button savings,current;
+Button savings,current;String acc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accounts);
+        acc=getIntent().getExtras().getString("acc");
         savings = (Button)findViewById(R.id.buttonSavings);
         savings.setOnClickListener(this);
     }
@@ -23,6 +24,7 @@ Button savings,current;
         {
             Intent intent = new Intent(this, Amount.class);
             intent.putExtra("acc_type","savings");
+            intent.putExtra("acc",acc);
             startActivity(intent);
             setContentView(R.layout.activity_amount);
         }

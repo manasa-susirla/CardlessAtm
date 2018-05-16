@@ -1,0 +1,41 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml:1:1-7:12
+	package
+		ADDED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml:2:5-41
+		INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml
+		INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml
+		ADDED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml:1:1-7:12
+		INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml
+		ADDED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml:1:1-7:12
+		INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml:1:11-69
+application
+ADDED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml:4:5-5:44
+	android:label
+		ADDED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml:5:9-41
+uses-sdk
+INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml
+INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml
+INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml
+INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml
+		ADDED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml
+		INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml
+		ADDED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml
+		INJECTED from /Users/manasa/Desktop/CardlessATM/libs/pinlockview/src/main/AndroidManifest.xml

@@ -4,33 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.lenovo.cardlessatm.AccessCode">
+    tools:context="com.example.hp.nfcsend.AccessCode">
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="122dp"
-        android:layout_height="50dp"
+        android:layout_width="233dp"
+        android:layout_height="109dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="228dp"
+        android:background="@drawable/accesscode"
+        android:fontFamily="casual"
+        android:gravity="center"
         android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="138dp"
-        android:layout_height="28dp"
+        android:layout_width="358dp"
+        android:layout_height="140dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Access Code"
+        android:fontFamily="casual"
+        android:text="Enter This Access Code in ATM:"
+        android:textColor="@color/zxing_custom_viewfinder_laser"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.28" />
+        app:layout_constraintVertical_bias="0.38" />
 
 </android.support.constraint.ConstraintLayout>

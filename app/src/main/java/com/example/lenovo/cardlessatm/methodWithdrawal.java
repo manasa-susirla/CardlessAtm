@@ -66,21 +66,49 @@ public class methodWithdrawal extends AppCompatActivity implements View.OnClickL
         qrScan = new IntentIntegrator(this);
         qr.setOnClickListener(this);
         sms.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Perform action on click
+                                   public void onClick(View v) {
+                                       // Perform action on click
+                                       Intent intent = new Intent(methodWithdrawal.this, AccessCode.class);
+                                       amt =Float.parseFloat(getIntent().getExtras().getString("amount"));
+                                       acc_type=getIntent().getExtras().getString("acc_type");
+                                       pin=Integer.parseInt(getIntent().getExtras().getString("pin"));
+                                       acc=Integer.parseInt(getIntent().getExtras().getString("acc"));
+                                       method_used="access";
+                                       System.out.println("pin="+pin);
+                                       System.out.println("amt="+amt);
+                                       System.out.println("acc="+acc);
+                                       System.out.println("acc_type="+acc_type);
+
+
+
+                                       intent.putExtra("amount",String.valueOf(amt));
+                                       intent.putExtra("pin",String.valueOf(pin));
+                                       intent.putExtra("acc_type",acc_type);
+                                       intent.putExtra("acc",String.valueOf(acc));
+                                       intent.putExtra("method_used",method_used);
+                                       startActivity(intent);
+                                   }
+                               }
+
+        );
+        nfc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(methodWithdrawal.this,NfcActivity.class);
                 amt =Float.parseFloat(getIntent().getExtras().getString("amount"));
                 acc_type=getIntent().getExtras().getString("acc_type");
                 pin=Integer.parseInt(getIntent().getExtras().getString("pin"));
                 acc=Integer.parseInt(getIntent().getExtras().getString("acc"));
-                method_used="access";
+                method_used="NFC";
+                intent.putExtra("amount",String.valueOf(amt));
+                intent.putExtra("pin",String.valueOf(pin));
+                intent.putExtra("acc_type",acc_type);
+                intent.putExtra("acc",String.valueOf(acc));
+                intent.putExtra("method_used",method_used);
+                startActivity(intent);
 
-                Intent activityChangeIntent = new Intent(methodWithdrawal.this, AccessCode.class);
-                startActivity(activityChangeIntent);
             }
-            }
-
-        );
-        nfc.setOnClickListener(this);
+        });
 
     }
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -193,7 +221,4 @@ public class methodWithdrawal extends AppCompatActivity implements View.OnClickL
         }
     }
 
-    }
-
-
-
+}

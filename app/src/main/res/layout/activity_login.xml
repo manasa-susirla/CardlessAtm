@@ -1,93 +1,272 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.lenovo.cardlessatm.Login">
+    android:layout_height="fill_parent"
 
-    <EditText
-        android:id="@+id/editTextEmailid"
-        android:layout_width="wrap_content"
-        android:layout_height="37dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="148dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.947"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textViewEmailid"
-        android:layout_width="112dp"
-        android:layout_height="34dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Email ID"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.303" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/white">
 
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.947"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.447" />
 
-    <TextView
-        android:id="@+id/textViewPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Password:"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.446" />
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignLeft="@+id/field_phone_number"
 
-    <Button
-        android:id="@+id/buttonLogin2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Log In"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.651" />
 
-</android.support.constraint.ConstraintLayout>
+            android:layout_alignStart="@+id/field_phone_number"
+            android:layout_below="@+id/status"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="76dp"
+
+            android:contentDescription="desc_firebase_lockup" />
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="-76dp"
+            android:text="Awesome, Thanks!"
+            android:textColor="#545454"
+            android:textSize="20sp"
+            android:typeface="sans"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/text5"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/text4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="-111dp"
+            android:text="We have sent a confirmation code"
+            android:textColor="#545454"
+            android:textSize="15sp"
+            android:typeface="sans"
+            android:visibility="gone" />
+
+
+        <TextView
+
+            android:id="@+id/text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="111dp"
+            android:text="you should get it soon."
+            android:textColor="#545454"
+            android:textSize="15sp"
+            android:visibility="gone"/>
+
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="85dp"
+            android:text="We need to send a confirmation code"
+            android:textColor="#545454"
+            android:textSize="15sp"
+            android:typeface="sans"
+            android:visibility="visible"/>
+
+
+        <TextView
+
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="111dp"
+            android:text="to get you started."
+            android:textColor="#545454"
+            android:textSize="15sp"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/detail"
+            android:layout_alignBottom="@+id/detail"
+            android:layout_toLeftOf="@+id/icon"
+            android:layout_toStartOf="@+id/icon"
+            android:text="phone_title_text"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="signed_out"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button_verify_phone"
+            android:layout_marginEnd="78dp"
+            android:layout_marginRight="78dp"
+            android:layout_marginTop="52dp"
+            android:layout_toLeftOf="@+id/title_text"
+            android:layout_toStartOf="@+id/title_text"
+            android:visibility="gone" />
+
+
+        <EditText
+            android:id="@+id/field_phone_number"
+            android:layout_width="285dp"
+            android:layout_height="40dp"
+
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="161dp"
+
+
+            android:background="@drawable/iconphone"
+            android:inputType="phone"
+            android:paddingBottom="10dp"
+            android:paddingLeft="100dp"
+            android:paddingRight="15dp"
+            android:textColor="#545454"
+            android:textColorHint="#545454"
+            android:textSize="21dp"
+            android:typeface="sans" />
+
+        <EditText
+            android:id="@+id/field_verification_code"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_alignTop="@+id/field_phone_number"
+
+
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/otptext"
+
+
+            android:inputType="number"
+            android:paddingBottom="10dp"
+            android:paddingLeft="60dp"
+            android:paddingRight="15dp"
+            android:textColor="#545454"
+            android:textColorHint="#D3D3D3"
+            android:textSize="21dp"
+            android:typeface="sans"
+            android:visibility="gone" />
+
+
+        <Button
+
+            android:id="@+id/button_start_verification"
+            android:layout_width="88dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/field_phone_number"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/buttonotp"
+            android:padding="10dp"
+            android:text="SEND"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"
+
+            android:textSize="15dp"
+            android:typeface="sans" />
+
+        <Button
+
+            android:id="@+id/button_verify_phone"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/icon"
+            android:layout_below="@+id/field_phone_number"
+            android:layout_marginStart="25dp"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:text="VERIFY"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#2196F3"
+            android:textSize="15sp"
+            android:typeface="sans"
+            android:layout_centerVertical="true"
+            android:visibility="gone" />
+
+        <Button
+
+
+            android:id="@+id/button_resend"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/field_phone_number"
+
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="86dp"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:text="RESEND"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#2196F3"
+            android:textSize="15sp"
+            android:typeface="sans"
+            android:visibility="gone" />
+
+
+        <Button
+            android:id="@+id/sign_out_button"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_alignLeft="@+id/button_verify_phone"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/button_verify_phone"
+            android:padding="10dp"
+            android:text="sign_out"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/code"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_alignTop="@+id/field_phone_number"
+            android:layout_marginEnd="6dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toStartOf="@+id/button_start_verification"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="+91"
+            android:textSize="21sp"
+            android:typeface="sans" />
+
+
+    </RelativeLayout>
+
+    </RelativeLayout>

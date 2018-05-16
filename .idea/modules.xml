@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CardlessATM.iml" filepath="$PROJECT_DIR$/CardlessATM.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libs/libs.iml" filepath="$PROJECT_DIR$/libs/libs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libs/pinlockview/pinlockview.iml" filepath="$PROJECT_DIR$/libs/pinlockview/pinlockview.iml" />
     </modules>
   </component>
 </project>

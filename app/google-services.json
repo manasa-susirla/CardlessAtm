@@ -8,12 +8,300 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:459470388816:android:b6d102efe6c11c3b",
+        "android_client_info": {
+          "package_name": "com.example.android.cardlessatm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "459470388816-jn8r1pm8jpdsk338rai734mdpmdj9bfu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.cardlessatm",
+            "certificate_hash": "cc3240092cfe3b86a560971ee2aac1757dd85ca7"
+          }
+        },
+        {
+          "client_id": "459470388816-7ika6d1lkop2h2jntq26inh0jqlrm1of.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZjDkQxXyfqq8D9TLFhZioJzCqBe-ujlc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459470388816-7ika6d1lkop2h2jntq26inh0jqlrm1of.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459470388816:android:75f337f6396e2ce7",
+        "android_client_info": {
+          "package_name": "com.example.android.nfc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "459470388816-1vpc8gclp1tdcn1v4uj4tu73n03l9a2a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.nfc",
+            "certificate_hash": "cc3240092cfe3b86a560971ee2aac1757dd85ca7"
+          }
+        },
+        {
+          "client_id": "459470388816-7ika6d1lkop2h2jntq26inh0jqlrm1of.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZjDkQxXyfqq8D9TLFhZioJzCqBe-ujlc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459470388816-7ika6d1lkop2h2jntq26inh0jqlrm1of.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459470388816:android:ac9f98f9cb1ec216",
+        "android_client_info": {
+          "package_name": "com.example.android.userauthentication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "459470388816-02a9kmknp5b4kl63dh2eqtcvo0lo7r52.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.userauthentication",
+            "certificate_hash": "cc3240092cfe3b86a560971ee2aac1757dd85ca7"
+          }
+        },
+        {
+          "client_id": "459470388816-7ika6d1lkop2h2jntq26inh0jqlrm1of.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZjDkQxXyfqq8D9TLFhZioJzCqBe-ujlc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459470388816-7ika6d1lkop2h2jntq26inh0jqlrm1of.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459470388816:android:4398ce8b2e0c4d86",
+        "android_client_info": {
+          "package_name": "com.example.hp.atm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "459470388816-nhreb20jr7djhjhu4ga6rb8p4l0c81sr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hp.atm",
+            "certificate_hash": "5f1395a14a7f4594f1ce8b3285c79a95498a3ab7"
+          }
+        },
+        {
+          "client_id": "459470388816-7ika6d1lkop2h2jntq26inh0jqlrm1of.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZjDkQxXyfqq8D9TLFhZioJzCqBe-ujlc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459470388816-7ika6d1lkop2h2jntq26inh0jqlrm1of.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459470388816:android:16baee2c3e416788",
+        "android_client_info": {
+          "package_name": "com.example.hp.nfcsend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "459470388816-dg232sbvtnlqv1kmv45s4jqq62hsvgmc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hp.nfcsend",
+            "certificate_hash": "5f1395a14a7f4594f1ce8b3285c79a95498a3ab7"
+          }
+        },
+        {
+          "client_id": "459470388816-7ika6d1lkop2h2jntq26inh0jqlrm1of.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZjDkQxXyfqq8D9TLFhZioJzCqBe-ujlc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459470388816-7ika6d1lkop2h2jntq26inh0jqlrm1of.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459470388816:android:5c96d1182ec0ca4e",
+        "android_client_info": {
+          "package_name": "com.example.lenovo.atmapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "459470388816-t3n1l8l5tddidvrv2dunv3guf1nk0lai.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lenovo.atmapp",
+            "certificate_hash": "3535a3a9ddcc329e6affd570b07922cc384d6792"
+          }
+        },
+        {
+          "client_id": "459470388816-f7r11pgvspgunhp4soilj90ierq26f9s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lenovo.atmapp",
+            "certificate_hash": "8d57228d4fadd09af14fffabb119b2e9116cc3bf"
+          }
+        },
+        {
+          "client_id": "459470388816-7ika6d1lkop2h2jntq26inh0jqlrm1of.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZjDkQxXyfqq8D9TLFhZioJzCqBe-ujlc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459470388816-7ika6d1lkop2h2jntq26inh0jqlrm1of.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:459470388816:android:c6827bd47d527b1c",
         "android_client_info": {
           "package_name": "com.example.lenovo.cardlessatm"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "459470388816-mele9a2en0nq3s6ihb4q4jsifd256c7u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lenovo.cardlessatm",
+            "certificate_hash": "cc3240092cfe3b86a560971ee2aac1757dd85ca7"
+          }
+        },
+        {
+          "client_id": "459470388816-romfi5biitd9d2mq47culfh58uuqvmrj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lenovo.cardlessatm",
+            "certificate_hash": "3535a3a9ddcc329e6affd570b07922cc384d6792"
+          }
+        },
         {
           "client_id": "459470388816-5pf8u3vka8n153ismnkin4nbajlha405.apps.googleusercontent.com",
           "client_type": 1,
