@@ -17,6 +17,7 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <uses-feature
         android:name="android.hardware.nfc"
@@ -87,13 +88,22 @@
         <activity android:name=".EnterActivity" />
         <activity android:name=".EnterToResetActivity" />
         <activity android:name=".ForgotActivity" />
-        <activity android:name=".SignOutActivity" />
+        <activity android:name=".SignOutActivity">
+            <intent-filter>
+                <action android:name="com.android.lenovo.cardlessatm.SignOutActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".AccountsActivity" />
         <activity android:name=".PinVerifyActivity" />
         <activity android:name=".linkedAccounts" />
         <activity android:name=".Reenter" />
         <activity android:name=".ScreenLock" />
-        <activity android:name=".AccActivity" />
+        <activity
+            android:name=".AccActivity"
+            android:label="@string/title_activity_acc"
+            android:theme="@style/AppTheme" />
         <activity android:name=".AmtPin" />
         <activity android:name=".TransactionReceipts" />
         <activity android:name=".Selectmethod" />
@@ -115,7 +125,8 @@
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings"></activity>
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme1"></activity>
     </application>
 
 </manifest>

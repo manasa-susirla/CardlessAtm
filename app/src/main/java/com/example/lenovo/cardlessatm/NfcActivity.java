@@ -56,13 +56,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.nio.charset.Charset;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
-
-
-
-
-    class TransactionDetail
+class TransactionDetail
     {
         float amount;
         int acc_no;
@@ -105,7 +103,7 @@ import java.nio.charset.Charset;
             // Check for available NFC Adapter
             mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
             if (mNfcAdapter == null) {
-                Toast.makeText(this, "NFC is not available", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "NFC is not available. Enable in your settings.", Toast.LENGTH_LONG).show();
                 finish();
                 return;
             }
@@ -144,6 +142,20 @@ import java.nio.charset.Charset;
 
             // Register callback
             mNfcAdapter.setNdefPushMessageCallback(this, this);
+            new Timer().schedule(new TimerTask(){
+                public void run() {
+                    NfcActivity.this.runOnUiThread(new Runnable() {
+                        public void run() {
+
+                            Intent intent=new Intent(NfcActivity.this,TransactionReceipts.class);
+                            intent.putExtra("acc",String.valueOf(acc));
+                            intent.putExtra("TransID",acc_type+String.valueOf(acc)+(String) formatter.format(date));
+                            startActivity(intent);
+                        }
+                    });
+                }
+            }, 60000);
+
         }
 
         @Override

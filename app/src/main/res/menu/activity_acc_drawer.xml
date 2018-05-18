@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/plus"
+            android:title="Add Account" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/location"
+            android:title="Show Nearby ATM's" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/change"
+            android:title="Change Screen Pin" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Show Transaction History" />
+    </group>
+
+    <item android:title="Sign Out">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/signout"
+                android:title="Logout from this device" />
+
+        </menu>
+    </item>
+
+</menu>

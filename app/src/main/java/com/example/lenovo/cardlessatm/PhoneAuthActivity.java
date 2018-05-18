@@ -1,6 +1,5 @@
 package com.example.lenovo.cardlessatm;
 
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -40,11 +39,12 @@ import org.w3c.dom.Text;
 
 import java.util.concurrent.TimeUnit;
 
-public class PhoneAuthActivity extends AppCompatActivity implements View.OnClickListener {
-    public static final String ph = "mobile no";
+public class PhoneAuthActivity extends AppCompatActivity implements
+        View.OnClickListener {
+    public static final String ph="mobile no";
     private static final String TAG = "PhoneAuthActivity";
-    private int FLAG = 0;
-    Userdetails profile = new Userdetails();
+    private int FLAG=0;
+    Userdetails profile=new Userdetails();
 
     private static final String KEY_VERIFY_IN_PROGRESS = "key_verify_in_progress";
 
@@ -95,8 +95,7 @@ public class PhoneAuthActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phone_auth);
-
+        setContentView(R.layout.activity_login);
 
         // Restore instance state
         if (savedInstanceState != null) {
@@ -105,17 +104,18 @@ public class PhoneAuthActivity extends AppCompatActivity implements View.OnClick
 
         // Assign views
 
-        mtext1 = (TextView) findViewById(R.id.text1);
-        mtext2 = (TextView) findViewById(R.id.text2);
-        mcode = (TextView) findViewById(R.id.code);
-        mtext4 = (TextView) findViewById(R.id.text4);
-        mtext5 = (TextView) findViewById(R.id.text5);
-        mtext3 = (TextView) findViewById(R.id.text3);
+        mtext1=(TextView)findViewById(R.id.text1);
+        mtext2=(TextView)findViewById(R.id.text2);
+        mcode=(TextView) findViewById(R.id.code);
+        mtext4=(TextView)findViewById(R.id.text4);
+        mtext5=(TextView)findViewById(R.id.text5);
+        mtext3=(TextView) findViewById(R.id.text3);
 
         mStatusText = (TextView) findViewById(R.id.status);
         mDetailText = (TextView) findViewById(R.id.detail);
 
         mPhoneNumberField = (EditText) findViewById(R.id.field_phone_number);
+
 
 
         // Typeface custom_font = Typeface.createFromAsset(getAssets(),  "assets/fonts/Roboto-Medium.ttf");
@@ -130,6 +130,8 @@ public class PhoneAuthActivity extends AppCompatActivity implements View.OnClick
         mVerifyButton = (Button) findViewById(R.id.button_verify_phone);
         mResendButton = (Button) findViewById(R.id.button_resend);
         mSignOutButton = (Button) findViewById(R.id.sign_out_button);
+
+
 
 
         // Assign click listeners
@@ -301,43 +303,56 @@ public class PhoneAuthActivity extends AppCompatActivity implements View.OnClick
                                 @Override
                                 public void onDataChange(DataSnapshot snapshot) {
                                     if (snapshot.getValue() != null) {
-
+                                        SharedPreferences s=getSharedPreferences("Mobile",0);
+                                        SharedPreferences.Editor editor1= s.edit();
+                                        editor1.putString("Phone",mPhoneNumberField.getText().toString());
+                                        editor1.apply();
                                         //myRef.child("Accounts").child("SBI").child(userdetails.getAccount()).child("isPhoneLinked").setValue("Yes");
-                                        myRef.child(mPhoneNumberField.getText().toString()).child("isPhonelinked").setValue("yes");
-                                       // Intent d = new Intent(getApplicationContext(), AccActivity.class);
-                                       // d.putExtra(ph, mPhoneNumberField.getText().toString());
-                                        Intent y = new Intent(getApplicationContext(), AccActivity.class);
+                                        Intent d=new Intent(getApplicationContext(),MainActivity.class);
+                                        d.putExtra(ph,mPhoneNumberField.getText().toString());
+                                        Intent y = new Intent(getApplicationContext(), PinActivity.class);
                                         //Intent d=new Intent(getApplicationContext(),Accounts.class);
-                                        y.putExtra(ph, mPhoneNumberField.getText().toString());
+                                        y.putExtra(ph,mPhoneNumberField.getText().toString());
                                         y.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                         y.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(y);
 
                                         SharedPreferences mPreferences;
 
-                                        mPreferences = getSharedPreferences("UserAccounts", MODE_PRIVATE);
-                                        SharedPreferences.Editor editor3 = mPreferences.edit();
-                                        editor3.putString("userid", userID);
-                                        editor3.commit();
+                                        mPreferences = getSharedPreferences("User", MODE_PRIVATE);
+                                        SharedPreferences.Editor editor = mPreferences.edit();
+                                        editor.putString("saveuserid", userID);
+                                        editor.commit();
 
                                         //user exists, do something
                                     } else {
 
                                         SharedPreferences mPreferences;
 
-                                        mPreferences = getSharedPreferences("UserAccounts", MODE_PRIVATE);
-                                        SharedPreferences.Editor editor3 = mPreferences.edit();
-                                        editor3.putString("userid", userID);
-                                        editor3.commit();
+                                        mPreferences = getSharedPreferences("User", MODE_PRIVATE);
+                                        SharedPreferences.Editor editor = mPreferences.edit();
+                                        editor.putString("saveuserid", userID);
+                                        editor.commit();
 
                                         contactno = mPhoneNumberField.getText().toString();
-                                        myRef.child(mPhoneNumberField.getText().toString()).child("isPhonelinked").setValue("yes");
+                                        //user does not exist, do something else
+                                        myRef.child("users").child(userID).setValue("true");
+                                        //    myRef.child("users").child(userID).child("Name").setValue("true");
+                                        myRef.child("users").child(userID).child("contact").setValue(contactno);
+                                        //myRef.child("Accounts").child("SBI").child(userdetails.getAccount()).child("isPhoneLinked").setValue("Yes");
 
-                                        Intent y = new Intent(getApplicationContext(), AccActivity.class);
+                                        //myRef.child("contacts").setValue(mPhoneNumberField.getText().toString());
+                                        //Intent d=new Intent(getApplicationContext(),MainActivity.class);
+                                        //d.putExtra(ph,mPhoneNumberField.getText().toString());
+                                        Intent y = new Intent(getApplicationContext(),PinActivity.class);
                                         //Intent d=new Intent(getApplicationContext(),Accounts.class);
+                                        SharedPreferences s=getSharedPreferences("Mobile",0);
+                                        SharedPreferences.Editor editor1= s.edit();
+                                        editor1.putString("Phone",mPhoneNumberField.getText().toString());
+                                        editor1.apply();
 
 
-                                        y.putExtra(ph, mPhoneNumberField.getText().toString());
+                                        y.putExtra(ph,mPhoneNumberField.getText().toString());
                                         y.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                         y.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(y);
@@ -405,14 +420,14 @@ public class PhoneAuthActivity extends AppCompatActivity implements View.OnClick
         switch (uiState) {
             case STATE_INITIALIZED:
                 // Initialized state, show only the phone number field and start button
-                enableViews(mStartButton, mPhoneNumberField, mtext2, mtext1, mcode);
+                enableViews(mStartButton, mPhoneNumberField,mtext2,mtext1,mcode);
                 disableViews(mVerifyButton, mResendButton, mVerificationField);
                 mDetailText.setText(null);
                 break;
             case STATE_CODE_SENT:
                 // Code sent state, show the verification field, the
                 enableViews(mVerifyButton, mResendButton, mVerificationField);
-                disableViews(mStartButton, mtext1, mtext2, mcode);
+                disableViews(mStartButton,mtext1,mtext2,mcode);
                 //  mDetailText.setText(R.string.status_code_sent);
                 Toast.makeText(getApplicationContext(), "code sent", Toast.LENGTH_LONG).show();
                 break;
@@ -496,11 +511,11 @@ public class PhoneAuthActivity extends AppCompatActivity implements View.OnClick
                 myRef.child("accounts").orderByChild("mobile").equalTo(Long.valueOf(mPhoneNumberField.getText().toString())).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        for (DataSnapshot trackSnapshot : dataSnapshot.getChildren()) {
+                        for(DataSnapshot trackSnapshot :dataSnapshot.getChildren()){
                             profile = trackSnapshot.getValue(Userdetails.class);
 
 
-                            if (profile != null) {
+                            if(profile!=null){
                                 System.out.println("hello");
                                 if (!validatePhoneNumber()) {
                                     return;
@@ -521,16 +536,15 @@ public class PhoneAuthActivity extends AppCompatActivity implements View.OnClick
                                 mcode.setVisibility(View.INVISIBLE);
                                 mStartButton.setVisibility(View.INVISIBLE);
                                 mPhoneNumberField.setVisibility(View.INVISIBLE);
-                                FLAG = 1;
+                                FLAG=1;
                                 break;
 
 
                                 //Toast.makeText(getApplicationContext(), "enter registered number", Toast.LENGTH_SHORT).show();
                                 //Toast.makeText(LoginActivity.this, "enter registered number", Toast.LENGTH_SHORT).show();
 
-                            }
-                        }
-                        if (FLAG == 0) {
+                            }}
+                        if(FLAG==0){
                             // System.out.println");
                             Toast.makeText(PhoneAuthActivity.this, "Enter Registered Mobile Number", Toast.LENGTH_SHORT).show();
                             // break;

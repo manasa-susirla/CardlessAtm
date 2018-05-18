@@ -307,7 +307,7 @@ public class LoginActivity extends AppCompatActivity implements
                                         SharedPreferences.Editor editor1= s.edit();
                                         editor1.putString("Phone",mPhoneNumberField.getText().toString());
                                         editor1.apply();
-                                        //myRef.child("Accounts").child("SBI").child(userdetails.getAccount()).child("isPhoneLinked").setValue("Yes");
+                                      //  myRef.child(mPhoneNumberField.getText().toString()).child("isPhoneLinked").setValue("Yes");
                                         Intent d=new Intent(getApplicationContext(),MainActivity.class);
                                         d.putExtra(ph,mPhoneNumberField.getText().toString());
                                         Intent y = new Intent(getApplicationContext(), PinActivity.class);
@@ -316,6 +316,7 @@ public class LoginActivity extends AppCompatActivity implements
                                         y.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                         y.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(y);
+
 
                                         SharedPreferences mPreferences;
 
@@ -344,6 +345,8 @@ public class LoginActivity extends AppCompatActivity implements
                                         //myRef.child("contacts").setValue(mPhoneNumberField.getText().toString());
                                         //Intent d=new Intent(getApplicationContext(),MainActivity.class);
                                         //d.putExtra(ph,mPhoneNumberField.getText().toString());
+                                       // myRef.child(mPhoneNumberField.getText().toString()).child("isPhoneLinked").setValue("Yes");
+
                                         Intent y = new Intent(getApplicationContext(),PinActivity.class);
                                         //Intent d=new Intent(getApplicationContext(),Accounts.class);
                                         SharedPreferences s=getSharedPreferences("Mobile",0);

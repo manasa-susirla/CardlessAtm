@@ -27,6 +27,8 @@ import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Selectmethod extends AppCompatActivity {
     Button nfc,qrcode,accesscode;
@@ -59,7 +61,7 @@ public class Selectmethod extends AppCompatActivity {
                 method_used="NFC";
                 Intent intent = new Intent(Selectmethod.this,NfcActivity.class);
                 amt =Float.parseFloat(getIntent().getExtras().getString("amount"));
-                acc_type=getIntent().getExtras().getString("acc_type");
+                //acc_type=getIntent().getExtras().getString("acc_type");
                 pin=Integer.parseInt(getIntent().getExtras().getString("pin"));
                 acc=Integer.parseInt(getIntent().getExtras().getString("acc_no"));
 
@@ -79,7 +81,7 @@ public class Selectmethod extends AppCompatActivity {
             public void onClick(View v) {
                 method_used="qrcode";
                 amt =Float.parseFloat(getIntent().getExtras().getString("amount"));
-                acc_type=getIntent().getExtras().getString("acc_type");
+               // acc_type=getIntent().getExtras().getString("acc_type");
                 pin=Integer.parseInt(getIntent().getExtras().getString("pin"));
                 acc=Integer.parseInt(getIntent().getExtras().getString("acc_no"));
                 method_used="qr";
@@ -126,6 +128,20 @@ public class Selectmethod extends AppCompatActivity {
 
 
                 qrScan.initiateScan();
+                new Timer().schedule(new TimerTask(){
+                    public void run() {
+                        Selectmethod.this.runOnUiThread(new Runnable() {
+                            public void run() {
+
+                                Intent intent=new Intent(Selectmethod.this,TransactionReceipts.class);
+                                intent.putExtra("acc",String.valueOf(acc));
+                                intent.putExtra("TransID",acc_type+String.valueOf(acc)+(String) formatter.format(date));
+                                startActivity(intent);
+                            }
+                        });
+                    }
+                }, 60000);
+
             }
         });
 

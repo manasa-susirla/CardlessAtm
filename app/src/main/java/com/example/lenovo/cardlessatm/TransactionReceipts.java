@@ -55,7 +55,7 @@ public class TransactionReceipts extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 td=dataSnapshot.getValue(Transdetails.class);
                 //System.out.println(td.getAmount());
-                String R= "Rs"+String.valueOf(td.getAmount());
+                String R= "₹ "+String.valueOf(td.getAmount());
 
                 if(td.isComplete()){
                     //tRs.setText(dataSnapshot.getValue());
