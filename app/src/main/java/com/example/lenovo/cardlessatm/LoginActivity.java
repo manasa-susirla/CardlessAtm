@@ -307,6 +307,8 @@ public class LoginActivity extends AppCompatActivity implements
                                         SharedPreferences.Editor editor1= s.edit();
                                         editor1.putString("Phone",mPhoneNumberField.getText().toString());
                                         editor1.apply();
+                                        //myRef.child("accounts").orderByChild("mobile").equalTo(Long.valueOf(mPhoneNumberField.getText().toString())).addValueEventListener(new ValueEventListener() {
+
                                       //  myRef.child(mPhoneNumberField.getText().toString()).child("isPhoneLinked").setValue("Yes");
                                         Intent d=new Intent(getApplicationContext(),MainActivity.class);
                                         d.putExtra(ph,mPhoneNumberField.getText().toString());

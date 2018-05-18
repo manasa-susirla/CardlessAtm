@@ -124,9 +124,9 @@ public class Selectmethod extends AppCompatActivity {
                     }
                 });
                 //System.out.println(TransactionIdList+"*"+acc_type+String.valueOf(acc)+(String)formatter.format(date));
-                myRef.child("accounts").child(String.valueOf(acc)).child("transactionIDList").setValue(TransactionIdList+"*"+acc_type+String.valueOf(acc)+(String)formatter.format(date));
+            //    myRef.child("accounts").child(String.valueOf(acc)).child("transactionIDList").setValue(TransactionIdList+"*"+acc_type+String.valueOf(acc)+(String)formatter.format(date));
 
-
+                myRef.child("ATM").child("HYD12").child("transaction_initiated").setValue(false);
                 qrScan.initiateScan();
                 new Timer().schedule(new TimerTask(){
                     public void run() {

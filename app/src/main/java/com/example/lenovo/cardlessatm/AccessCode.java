@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,6 +31,7 @@ class TransactionDet
     String date_of_Transaction;
     boolean isComplete;
     String method_used;
+
     void setValues(float amount,int acc_no,String acc_type,String atm_no,String code,String date_of_Transaction,boolean isComplete,String method_used)
     {this.acc_no=acc_no;
         this.acc_type=acc_type;
@@ -41,18 +44,20 @@ class TransactionDet
 }
 
 public class AccessCode extends AppCompatActivity {
-TextView code;
-float amt;
-int pin,acc;
-String acc_type,method_used,TransactionIdList;
+    TextView code;
+    float amt;
+    int pin,acc;
+    String acc_type,method_used,TransactionIdList;
     SimpleDateFormat formatter;
     String otp;
     Date date;
     FirebaseDatabase fd;
+    Button proceed;
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_access_code);
+        proceed=(Button) findViewById(R.id.button_proceed);
         amt =Float.parseFloat(getIntent().getExtras().getString("amount"));
         System.out.println("amt="+amt);
         acc_type=getIntent().getExtras().getString("acc_type");
@@ -65,7 +70,7 @@ String acc_type,method_used,TransactionIdList;
 
 // Here we are using random() method of util
 // class in Java
-otp="";
+        otp="";
         try {
             otp=OTP();
             code.setText(otp);
@@ -89,39 +94,94 @@ otp="";
             System.out.println("amt="+amt);
             System.out.println("acc="+acc);
             System.out.println("acc_type="+acc_type);*/
-            formatter = new SimpleDateFormat("dd:MM:yyyy HH:mm:ss");
-            date = new Date();
+        formatter = new SimpleDateFormat("dd:MM:yyyy HH:mm:ss");
+        date = new Date();
 
-            //creating transaction details node
-            TransactionDet td= new TransactionDet();
-            td.setValues(amt,acc,acc_type,"",otp,formatter.format(date),false,method_used);
-            DatabaseReference pathReference = FirebaseDatabase.getInstance().getReference().child("TransactionDetails");
-            final Task<Void> voidTask = pathReference.child(acc_type+String.valueOf(acc)+(String) formatter.format(date)).setValue(td).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
+        //creating transaction details node
+        TransactionDet td= new TransactionDet();
+        td.setValues(amt,acc,acc_type,"",otp,formatter.format(date),false,method_used);
+        DatabaseReference pathReference = FirebaseDatabase.getInstance().getReference().child("TransactionDetails");
+        final Task<Void> voidTask = pathReference.child(acc_type+String.valueOf(acc)+(String) formatter.format(date)).setValue(td).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
 
-                }
-            });
-            //updating current TransactionId in the account Node
-            FirebaseDatabase.getInstance().getReference().child("accounts").child(String.valueOf(acc)).child("currentTransactionID").setValue(acc_type+String.valueOf(acc)+(String)formatter.format(date));;
+            }
+        });
+        //updating current TransactionId in the account Node
+        FirebaseDatabase.getInstance().getReference().child("accounts").child(String.valueOf(acc)).child("currentTransactionID").setValue(acc_type+String.valueOf(acc)+(String)formatter.format(date));;
 
-            //updating current TransactionIdList in the account Node
+        //updating current TransactionIdList in the account Node
 
-            FirebaseDatabase.getInstance().getReference().child("accounts").child(String.valueOf(acc)).child("transactionIDList").addListenerForSingleValueEvent( new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot snapshot) {
-                    TransactionIdList= (String) snapshot.getValue();
-                    System.out.println("transactionidlist="+TransactionIdList);
-                }
+        FirebaseDatabase.getInstance().getReference().child("accounts").child(String.valueOf(acc)).child("transactionIDList").addListenerForSingleValueEvent( new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                TransactionIdList= (String) snapshot.getValue();
+                System.out.println("transactionidlist="+TransactionIdList);
+            }
 
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
-                }
-            });
-            //System.out.println(TransactionIdList+"*"+acc_type+String.valueOf(acc)+(String)formatter.format(date));
-            FirebaseDatabase.getInstance().getReference().child("accounts").child(String.valueOf(acc)).child("transactionIDList").setValue(TransactionIdList+"*"+acc_type+String.valueOf(acc)+(String)formatter.format(date));
-        new Timer().schedule(new TimerTask(){
+            }
+        });
+
+        //System.out.println(TransactionIdList+"*"+acc_type+String.valueOf(acc)+(String)formatter.format(date));
+        FirebaseDatabase.getInstance().getReference().child("accounts").child(String.valueOf(acc)).child("transactionIDList").setValue(TransactionIdList+"*"+acc_type+String.valueOf(acc)+(String)formatter.format(date));
+        FirebaseDatabase.getInstance().getReference().child("TransactionDetails").child(acc_type+String.valueOf(acc)+(String) formatter.format(date)).child("isComplete").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Intent intent=new Intent(AccessCode.this,TransactionReceipts.class);
+                intent.putExtra("acc",String.valueOf(acc));
+                intent.putExtra("TransID",acc_type+String.valueOf(acc)+(String) formatter.format(date));
+                startActivity(intent);
+
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                Intent intent=new Intent(AccessCode.this,TransactionReceipts.class);
+                intent.putExtra("acc",String.valueOf(acc));
+                intent.putExtra("TransID",acc_type+String.valueOf(acc)+(String) formatter.format(date));
+                startActivity(intent);
+
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+                Intent intent=new Intent(AccessCode.this,TransactionReceipts.class);
+                intent.putExtra("acc",String.valueOf(acc));
+                intent.putExtra("TransID",acc_type+String.valueOf(acc)+(String) formatter.format(date));
+                startActivity(intent);
+
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+                Intent intent=new Intent(AccessCode.this,TransactionReceipts.class);
+                intent.putExtra("acc",String.valueOf(acc));
+                intent.putExtra("TransID",acc_type+String.valueOf(acc)+(String) formatter.format(date));
+                startActivity(intent);
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Intent intent=new Intent(AccessCode.this,TransactionReceipts.class);
+                intent.putExtra("acc",String.valueOf(acc));
+                intent.putExtra("TransID",acc_type+String.valueOf(acc)+(String) formatter.format(date));
+                startActivity(intent);
+
+
+            }
+        });
+
+
+
+       /* new Timer().schedule(new TimerTask(){
             public void run() {
                 AccessCode.this.runOnUiThread(new Runnable() {
                     public void run() {
@@ -133,7 +193,7 @@ otp="";
                     }
                 });
             }
-        }, 60000);
+        }, 60000); */
 /*
         for(int i=0;i<60;i++)
             try {
@@ -156,7 +216,7 @@ otp="";
         Random r=new Random();
         int len=6;
         // int len=r.nextInt(10);
-    System.out.println("len="+len);
+        System.out.println("len="+len);
         String values = Capital_chars + Small_chars +
                 numbers + symbols;
         // Using random method

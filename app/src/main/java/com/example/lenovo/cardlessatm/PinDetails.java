@@ -25,6 +25,7 @@ class AccountDetails
     String currentTransactionID;
     String transactionIDList;
     String isLinked;
+  //  String isPhoneLinked;
 
     AccountDetails(){
 

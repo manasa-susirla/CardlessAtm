@@ -14,6 +14,8 @@ public class Userdetails {
     private Long mobile;
     private Long pin;
     private String transactionIDList;
+    //private String isPhoneLinked;
+
 
     public Userdetails() {
     }
@@ -28,6 +30,7 @@ public class Userdetails {
         this.mobile = mobile;
         this.pin = pin;
         this.transactionIDList = transactionIDList;
+        //this.isPhoneLinked = isPhoneLinked;
     }
 
     public String getIFSC() {
